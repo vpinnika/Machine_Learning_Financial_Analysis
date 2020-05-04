@@ -1,6 +1,10 @@
-### Machine Learning Financial Analysis Project
+## Machine Learning Financial Analysis Project
 
-## Developers: 
+### Developers: 
                Venkat Pinnika, Michael Epps, Janice Ambrose, Young You
 
-## Technologies: 
+### Technologies: 
+               Python Pandas, Matplotlib, SciKit-Learn, JavaScript Plotly
+               
+### Data Source:
+               Yahoo Finance
