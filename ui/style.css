@@ -35,7 +35,9 @@ h3,h4{
 }
 
 #sectOne{
-    margin: 40px;
+    /* margin: auto !important; */
+    /* margin-left: 27%; */
+    /* padding: auto; */
     display: flex;
 }
 
@@ -43,4 +45,11 @@ input{
     height: 30px;
     border-radius: 3px;
     border: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.wrapper{
+ text-align: center;
+ margin: auto
 }
