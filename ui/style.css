@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 body{
-    font-family: 'Quicksand','Roboto','sans-serif';
+    font-family: 'Quicksand','Roboto','arial','sans-serif';
     padding: 0;
     margin: 0;
     background: #f4f4f4;
@@ -25,8 +25,10 @@ body{
 }
 .params{
     display: inline-flex;
+    align-items: center;
+    margin: auto;
 }
-h3,h4{
+h2,h3,h4{
     text-align: center !important;
 }
 .studiesh3{
@@ -36,6 +38,8 @@ h3,h4{
 
 #sectOne{
     /* margin: auto !important; */
+    margin-left: 15%;
+    margin-right: 10%;
     /* margin-left: 27%; */
     /* padding: auto; */
     display: flex;
@@ -46,10 +50,41 @@ input{
     border-radius: 3px;
     border: none;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
+    padding-left: 5px;
 }
 
 .wrapper{
  text-align: center;
- margin: auto
+ margin: auto;
+ display: flex;
+ flex-direction: column;
 }
+
+.button{
+    width: 90%;
+    margin-top: 10px;
+    background-color: aquamarine;
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.analysis{
+    margin: auto;
+}
+
+table{
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1;
+    padding: 10px
+}
+
+td{
+    padding: 10px;
+    font-size: 18px;
+}
+

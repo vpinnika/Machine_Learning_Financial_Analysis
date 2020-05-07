@@ -21,6 +21,7 @@
                 <div class="company">
                 
                 <input type="text" placeholder="AAPL">
+                <br><button class="button">Set</button>
             </div>
 
 
@@ -35,12 +36,14 @@
                     <div class="ma1">
                         <h4>Moving Avg 1</h4>
                         <input type="text" id="ma1" value="50">
+                        <br><button class="button">Set</button>
                     </div>
 
                     <!-- <div class="studies"> -->
                     <div class="ma2">
                         <h4>Moving Avg 2</h4>
                         <input type="text" id="ma2" value="200">
+                        <br><button class="button">Set</button>
                     </div>
                     <!-- <h4>Moving Avg 2</h4> -->
                 </div>
@@ -52,10 +55,23 @@
             <img src="figure.png" alt="">
         <!-- </figure> -->
 
+      
+       
         </div>
-    </div>
+       
+        <div class="analysis">
+            <h2>Analysis</h2>
+            <table id="analysisOne">
+                <tr><td>Forecast:</td><td>Bullish</td></tr>
+                <tr><td>Buy Rating:</td><td>70%</td></tr>
+                <tr><td>Change Today:</td><td>+2.34</td></tr>
+                <tr><td>Last MA Crossover: </td><td>UP</td></tr>
+            </table>
+        </div>
+        
     </section>
 </body>
-<script src="markethours.js"></script>
+<script src="autocaps.js"></script>
+<!-- <script src="markethours.js"></script> -->
 
 </html>
