@@ -5,15 +5,6 @@ app=Flask(__name__)
 
 @app.route("/",methods = ["GET","POST"])
 def index():
-    # print('hiii')
-    # print('method:  ',request.method)
-    if request.method == "POST":
-        print('hey there')
-        req = request
-        print(req.form)
-        # print(username)
-        # return redirect(request.url)
-
     return render_template("index.html")
 
 @app.route("/submit",methods=["POST","GET"])
@@ -21,7 +12,12 @@ def submit():
     if request.method == 'POST':
         req = request
         print(req.form)
-        return render_template("submit.html")   
+        ticker = request.form['ticker']
+        ma1 = request.form['ma1']
+        ma2 = request.form['ma2']
+
+      
+        return render_template("submit.html",ma1=ma1,ma2=ma2,ticker=ticker)   
     else:
         return render_template("submit.html")
 
