@@ -8,79 +8,57 @@
 
 <section id="sectOne">
     <div class="wrapper">
-    <div class="params">
 
-        <form action="/submit" method="POST">
-            <label>Symbol</label>
-            <input class="form-control" type="text" id="ticker" value="AAPL" name="ticker">
-            <br>
-            <label>Moving Avg 1</label>
-            <input class="form-control" type="text" id="ma1" value="50" name="ma1">
-            <label>Moving Avg 2</label>
-            <input class="form-control" type="text" id="ma2" value="200" name="ma2">
-            <button type="submit" class="button">Set</button>
-        </form>
+        <div class="data-form" >
+            <form action="/submit" method="POST" class="data-form" style="width: 200px !important;">
+                <label>Symbol</label>
 
-        <div class="ticker">
-            <h3>Symbol</h3>
-            <h4>Company</h4>
-            <div class="company">
-            
-            <form name="ticker" action="." method="post">
-            <input type="text" placeholder="AAPL" name="stock">
-          </form>
-            <br><button class="button">Set</button>
+                <input class="form-control" type="text" id="ticker" value="{{ ticker }}" name="ticker">
+              
+                <label>Moving Avg 1</label>
+
+                <input class="form-control" type="text" id="ma1" value="50" name="ma1">
+               
+                <label>Moving Avg 2</label>
+
+                <input class="form-control" type="text" id="ma2" value="200" name="ma2">
+                <button type="submit" class="button">Set</button>
+            </form>
         </div>
 
 
-        </div>
+        <figure>
 
-        <div class="studySelect">
+          
+            <img src="./static/figure.png" alt="">
+        </figure>
 
 
-            <h3 class="studiesh3">Studies</h3>
-            <div class="studies">
-                
-                <div class="ma1">
-                    <h4>Moving Avg 1</h4>
-                    <!-- <form action="/submit" method="POST"> -->
-                    <input class="form-control" type="text" id="ma1" value="50" name="ma1">
-                    <br><button type="submit" class="button">Set</button>
-                    <!-- </form> -->
-                </div>
-
-                
-                <div class="ma2">
-                    <h4>Moving Avg 2</h4>
-                    <!-- <form action="/submit" method="POST"> -->
-                        <input class="form-control" type="text" id="ma2" value="200" name="ma2">
-                        <br><button type="submit" class="button">Set</button>
-                        <!-- </form> -->
-                </div>
-                <!-- <h4>Moving Avg 2</h4> -->
-            </div>
-
-        </div>
 
     </div>
-    <!-- <figure> -->
-        <img src="./static/figure.png" alt="">
-    <!-- </figure> -->
 
-  
-   
-    </div>
-   
     <div class="analysis">
         <h2>Analysis</h2>
         <table id="analysisOne">
-            <tr><td>Forecast:</td><td>Bullish</td></tr>
-            <tr><td>Buy Rating:</td><td>70%</td></tr>
-            <tr><td>Change Today:</td><td>+2.34</td></tr>
-            <tr><td>Last MA Crossover: </td><td>UP</td></tr>
+            <tr>
+                <td>Forecast:</td>
+                <td>Bullish</td>
+            </tr>
+            <tr>
+                <td>Buy Rating:</td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>Change Today:</td>
+                <td>+2.34</td>
+            </tr>
+            <tr>
+                <td>Last MA Crossover: </td>
+                <td>UP</td>
+            </tr>
         </table>
     </div>
-    
+
 </section>
 
 

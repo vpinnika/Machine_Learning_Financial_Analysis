@@ -15,9 +15,12 @@ def submit():
         ticker = request.form['ticker']
         ma1 = request.form['ma1']
         ma2 = request.form['ma2']
+        img = './static/figure.png'
+
+        # Parameters can now be passed through for calculations
 
       
-        return render_template("submit.html",ma1=ma1,ma2=ma2,ticker=ticker)   
+        return render_template("submit.html",ma1=ma1,ma2=ma2,ticker=ticker,img=img)   
     else:
         return render_template("submit.html")
 

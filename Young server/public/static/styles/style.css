@@ -43,6 +43,7 @@ h2,h3,h4{
     /* margin-left: 27%; */
     /* padding: auto; */
     display: flex;
+    /* flex-direction: row; */
 }
 
 input{
@@ -55,14 +56,14 @@ input{
 }
 
 .wrapper{
- text-align: center;
- margin: auto;
- display: flex;
+ text-align: center !important;
+ margin: auto ;
+ display: contents !important;
  flex-direction: column;
 }
 
 .button{
-    width: 90%;
+    width: 50%;
     margin-top: 10px;
     background-color: aquamarine;
     border: 0;
@@ -88,3 +89,7 @@ td{
     font-size: 18px;
 }
 
+.data-form{
+    width: 200px;
+    margin-top: 6%;
+}
