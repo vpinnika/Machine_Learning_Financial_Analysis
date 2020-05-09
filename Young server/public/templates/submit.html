@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{{ ma1 }}
+{{ ma2 }}
+{{ ticker }}
+
+<section id="sectOne">
+    <div class="wrapper">
+
+        <div class="data-form" >
+            <form action="/submit" method="POST" class="data-form" style="width: 200px !important;">
+                <label>Symbol</label>
+
+                <input class="form-control" type="text" id="ticker" value="{{ ticker }}" name="ticker">
+              
+                <label>Moving Avg 1</label>
+
+                <input class="form-control" type="text" id="ma1" value="50" name="ma1">
+               
+                <label>Moving Avg 2</label>
+
+                <input class="form-control" type="text" id="ma2" value="200" name="ma2">
+                <button type="submit" class="button">Set</button>
+            </form>
+        </div>
+
+
+        <figure>
+
+          
+            <img src="./static/figure.png" alt="">
+        </figure>
+
+
+
+    </div>
+
+    <div class="analysis">
+        <h2>Analysis</h2>
+        <table id="analysisOne">
+            <tr>
+                <td>Forecast:</td>
+                <td>Bullish</td>
+            </tr>
+            <tr>
+                <td>Buy Rating:</td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>Change Today:</td>
+                <td>+2.34</td>
+            </tr>
+            <tr>
+                <td>Last MA Crossover: </td>
+                <td>UP</td>
+            </tr>
+        </table>
+    </div>
+
+</section>
+
+
+
+</body>
+<script src="./static/autocaps.js"></script>
+<script src="./static/markethours.js"></script>
+
+</html>
+{% endblock %}
