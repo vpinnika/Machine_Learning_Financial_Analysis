@@ -15,6 +15,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 from analyze1 import generatePlot
+from predict import forecast
 
 app=Flask(__name__)
 
@@ -32,8 +33,8 @@ def submit():
         ma2 = int(request.form['ma2'])
         
         # Parameters can now be passed through for calculations
-        generatePlot(ma1,ma2,ticker)
-        img = './static/mac.png'
+        forecast(ma1,ma2,ticker)
+        img = './static/predict.png'
         return render_template("submit.html",ma1=ma1,ma2=ma2,ticker=ticker,img=img)   
     else:
         return render_template("submit.html")
