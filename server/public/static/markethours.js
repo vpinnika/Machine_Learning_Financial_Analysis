@@ -11,3 +11,12 @@ if(marketOpen){
     document.body.style.background = '#333'
     document.body.style.color = '#fff'
 }
+
+//tutor note:assuming you know what the running 20 day avg. and 200 day avg. is
+function above_below(avg20d,avg200d){
+    if (avg20d >avg200d){
+        return"above: "+Math.abs(avg20d-avg200d)
+    }else{
+        return"below: "+Math.abs(avg20d-avg200d)
+    }
+}
