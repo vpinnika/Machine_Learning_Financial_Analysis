@@ -123,7 +123,7 @@ def forecast(ma1,ma2,ticker):
     plt.ylabel('Price')
     plt.plot(ma_1, label=f'{ma1} Day SMA', linewidth = 1.5,color='pink')
     plt.plot(ma_2, label=f'{ma2} Day SMA', linewidth = 1.5,color='aqua')
-    plt.legend(by_label.valuesloc='best')
+    plt.legend(loc='best')
     # plt.show()
 
     plt.savefig('static/predict.png')
