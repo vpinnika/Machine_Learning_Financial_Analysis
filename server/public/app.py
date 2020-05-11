@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import datetime
 from pandas import Series, DataFrame
+import pandas_datareader.data as web
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib import style
@@ -22,6 +23,16 @@ app=Flask(__name__)
 @app.route("/",methods = ["GET","POST"])
 def index():
     return render_template("index.html")
+
+@app.route("/data")
+def get_data():
+    start_date = datetime.datetime(2016, 1, 1)
+    ## Select today's date as end date
+    end_date = datetime.datetime.now().date().isoformat() 
+
+    stocks_df = web.DataReader('FB', 'yahoo', start_date, end_date)
+    return jsonify(stocks_df.to_dict("records"))
+
 
 @app.route("/submit",methods=["POST","GET"])
 def submit():
