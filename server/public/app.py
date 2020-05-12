@@ -42,11 +42,14 @@ def submit():
         ticker = request.form['ticker']
         ma1 = int(request.form['ma1'])
         ma2 = int(request.form['ma2'])
-        
+        from_date = request.form['from_date']
+        to_date = request.form['to_date']
+        crossover = ''
+
         # Parameters can now be passed through for calculations
-        forecast(ma1,ma2,ticker)
+        forecast(ma1,ma2,ticker,from_date,to_date)
         img = './static/predict.png'
-        return render_template("submit.html",ma1=ma1,ma2=ma2,ticker=ticker,img=img)   
+        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover)   
     else:
         return render_template("submit.html")
 

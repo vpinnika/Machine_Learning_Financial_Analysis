@@ -19,14 +19,23 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 
+def parseDate(date):
+    format_str = '%m/%d/%y' # The format
+    datetime_obj = datetime.datetime.strptime(date, format_str).date().isoformat()
+    print(datetime_obj)
+    return datetime_obj
 
-def forecast(ma1,ma2,ticker):
 
-    ## Loading Yahoo Finance data set form 2016
-    # Get start and end dates 
-    start_date = datetime.datetime(2016, 5, 10)
-    ## Select today's date as end date
-    end_date = datetime.datetime.now().date().isoformat() 
+
+
+
+def forecast(ma1,ma2,ticker,from_date,to_date):
+    plt.clf()
+  
+    # start_date = datetime.datetime(2016, 5, 10)
+    # end_date = datetime.datetime.now().date().isoformat()
+    start_date = parseDate(from_date)
+    end_date = parseDate(to_date) 
 
     stocks_df = web.DataReader(ticker, 'yahoo', start_date, end_date)
 
@@ -47,6 +56,35 @@ def forecast(ma1,ma2,ticker):
     ma_2 = closing_price_df.rolling(window=ma2).mean()
     ma_2.index = pd.to_datetime(ma_2.index)
     ma_2.dropna(inplace=True)
+
+    # mas=[ma_1.tail(1).squeeze(),ma_2.tail(1).squeeze()]
+    # def mac(smas):
+    # #outputs
+    #     sma1 = smas[0]
+    #     sma2 = smas[1]
+    #     # print(max(ma1,ma2))
+    #     if ma1 != ma2:
+    #         maps = {
+    #             ma1:smas[0],
+    #             ma2:smas[1]
+    #         }
+    #         if ma1 < ma2:
+    #             # cross up
+    #             if maps[ma1] > maps[ma2]:
+    # #                 print('cross up')
+    #                 return 'Up'
+    #             else:
+    #                 return 'Down'
+    # #                 print('cross down')
+    #         elif ma2 > ma1:
+    #             if maps[ma2] < maps[ma1]:
+    #                 return 'Up'
+    #             else: 
+    #                 return 'Down'
+                    
+    #         else:
+    #             return 'Undetermined'
+    # crossover = mac(mas)
 
 
 
@@ -116,6 +154,8 @@ def forecast(ma1,ma2,ticker):
 
     dfreg['Adj Close'].tail(500).plot(color='black')
     dfreg['Forecast'].tail(500).plot(color='orange',label='Forecast')
+
+
 
     
     plt.title(ticker)
