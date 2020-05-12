@@ -6,15 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+ 
 
 </head>
 
 <body>
-    <nav class="nav">ML Financial Analysis</nav>
+    <nav class="nav"> 
+    ML Financial Analysis
+    <div class="menu">
+    <a href=""style="float:right;">Menu</a>
+    <div class="sub">
+    <a href="/">Home</a>
+    <a href="/submit">Forecasting</a>
+    <a href="/multi">Stock Comparison</a>
+    </div>
+    </div>
+</nav>
     {% block content %}
     {% endblock %} 
 
 </body>
 </html>
+<script>
+    document.querySelector('.menu').addEventListener('mouseover',()=>{
+    document.querySelector('.sub').classList.remove('hidden')
+    });
+
+    document.querySelector('.menu').addEventListener('mouseout',()=>{
+        document.querySelector('.sub').classList.add('hidden')
+    });
+    
+</script>
+<script src="./static/markethours.js"></script>
 
     

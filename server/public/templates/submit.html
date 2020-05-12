@@ -51,7 +51,7 @@
         <table id="analysisOne">
             <tr>
                 <td>Forecast:</td>
-                <td>Bullish</td>
+                <td>{{ trend if trend != None else 'x' }}</td>
             </tr>
             <tr>
                 <td>Buy Rating:</td>
@@ -74,7 +74,7 @@
 
 </body>
 <script src="./static/autocaps.js"></script>
-<script src="./static/markethours.js"></script>
+
 
 </html>
 {% endblock %}

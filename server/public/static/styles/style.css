@@ -98,3 +98,25 @@ td{
     width: 738px;
     height: 387px;
 } */
+
+.menu{
+    /* display: inline-flex; */
+    float: right;
+    display: inline-grid !important;  
+    /* background-color: #f0f0f0; */
+    font-size: 18px;
+}
+.sub{
+    display: inline-grid !important;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+.center{
+    text-align: center;
+}

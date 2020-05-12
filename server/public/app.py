@@ -47,11 +47,16 @@ def submit():
         crossover = ''
 
         # Parameters can now be passed through for calculations
-        forecast(ma1,ma2,ticker,from_date,to_date)
+        results = forecast(ma1,ma2,ticker,from_date,to_date)
+        trend = results['trend']
         img = './static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover)   
+        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend)   
     else:
         return render_template("submit.html")
+
+@app.route('/multi')
+def multi():
+    return render_template('multi.html')
 
 @app.after_request
 def add_header(response):

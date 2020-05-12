@@ -155,9 +155,18 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
     dfreg['Adj Close'].tail(500).plot(color='black')
     dfreg['Forecast'].tail(500).plot(color='orange',label='Forecast')
 
-
+    def trend():
+        forecastDF = dfreg['Forecast'].tail(500).dropna()
+        if forecastDF.tail(1).squeeze() > forecastDF.head(1).squeeze(): 
+            return 'Bullish'
+        elif forecastDF.tail(1).squeeze() < forecastDF.head(1).squeeze():
+            return 'Bearish'
+        else:
+            return 'Neutral'
+    forecastedTrend = trend()
 
     
+
     plt.title(ticker)
     plt.xlabel('Date')
     plt.ylabel('Price')
@@ -168,6 +177,11 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
 
     plt.savefig('static/predict.png')
 
+    results = {
+        'trend':forecastedTrend
+    }
+
+    return results
 
 
 
