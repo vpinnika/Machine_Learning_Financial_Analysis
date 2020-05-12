@@ -2,6 +2,23 @@
 {% block title %}hey{% endblock %}
 
 {% block content %}
-<h1>Index</h1>
+
+<h1>finantial analysis project</h1>
+<h3>Collecting the Historical Data:</h3>
+<hr>
+<h5>
+    <ul>
+        <li>Used Yahoo Finance as data source for historical data</li>
+        <li>Used these Pandas libraries:
+            <ul>
+                <li>import pandas_datareader.data as web</li>
+                <li>stocks_df = web.DataReader('FB', 'yahoo', start_date, end_date)</li>
+                <li>ma_200day= closing_price_df.rolling(window=200).mean()</li>
+            </ul>
+        </li>
+    </ul>
+</h5>
+
+
 {% endblock %}
 
