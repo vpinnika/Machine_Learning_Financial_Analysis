@@ -50,21 +50,37 @@
         <h2>Analysis</h2>
         <table id="analysisOne">
             <tr>
+                <td>Symbol:</td>
+                <td>{{ ticker }}</td>
+            </tr>
+            <tr>
                 <td>Forecast:</td>
                 <td>{{ trend if trend != None else 'x' }}</td>
             </tr>
             <tr>
-                <td>Buy Rating:</td>
-                <td>70%</td>
+                <td>Current Price:</td>
+                <td>{{ price }}</td>
             </tr>
             <tr>
                 <td>Change Today:</td>
-                <td>+2.34</td>
+                <td>{{ day }}</td>
             </tr>
             <tr>
-                <td>Last MA Crossover: </td>
-                <td>{{ crossover }}</td>
+                <td>Perf (Week):</td>
+                <td>{{ week }}</td>
             </tr>
+            <tr>
+                <td>Perf (Quarter):</td>
+                <td>{{ quarter }}</td>
+            </tr>
+            <tr>
+                <td>Market Cap:</td>
+                <td>{{ cap }}</td>
+            </tr>    
+        <!-- <tr>
+            <td>Predicted Change</td>
+            <td></td>
+        </tr> -->
         </table>
     </div>
 

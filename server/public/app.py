@@ -17,6 +17,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 from analyze1 import generatePlot
 from predict import forecast
+from scrape import scrape
 
 app=Flask(__name__)
 
@@ -48,9 +49,19 @@ def submit():
 
         # Parameters can now be passed through for calculations
         results = forecast(ma1,ma2,ticker,from_date,to_date)
+
+        data = scrape(ticker)
+
+        cap = data['cap']
+        price = data['price']
+        day = data['day']
+        week = data['week']
+        month = data['month']
+        quarter = data['quarter']
+
         trend = results['trend']
         img = './static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend)   
+        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter)   
     else:
         return render_template("submit.html")
 
