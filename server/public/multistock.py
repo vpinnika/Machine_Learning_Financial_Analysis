@@ -22,6 +22,15 @@ from random import randrange
 
 def multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date):
 
+    def parseDate(date):
+        format_str = '%m/%d/%y' # The format
+        datetime_obj = datetime.datetime.strptime(date, format_str).date().isoformat()
+        print(datetime_obj)
+        return datetime_obj
+
+    start_date = parseDate(from_date)
+    end_date = parseDate(to_date)
+
 
     tickers =[ticker1, ticker2,ticker3,ticker4]
     comp_stocks_df = web.DataReader(tickers,'yahoo',start_date,end_date)['Adj Close']
@@ -34,7 +43,7 @@ def multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date):
     plt.xlabel(f'Returns {ticker1}')
     plt.ylabel(f'Returns {ticker2}')
 
-    plt.title('Scatter Plot of AMZN and MSFT')
+    plt.title(f'Returns on {ticker1} and {ticker2}')
     # plt.legend()
 
     plt.savefig('static/scatter.png')
