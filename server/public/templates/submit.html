@@ -2,9 +2,7 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-{{ ma1 }}
-{{ ma2 }}
-{{ ticker }}
+
 
 <section id="sectOne">
     <div class="wrapper">
@@ -77,13 +75,18 @@
                 <td>Market Cap:</td>
                 <td>{{ cap }}</td>
             </tr>    
-        <!-- <tr>
-            <td>Predicted Change</td>
-            <td></td>
-        </tr> -->
         </table>
+        
     </div>
 
+  
+
+</section>
+
+<section id="sectTwo">
+    <div class="Forecast">
+        {{ value }}
+    </div>
 </section>
 
 

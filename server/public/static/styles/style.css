@@ -220,3 +220,19 @@ figure.row{
 .row1{
     margin-left: 14px;
 }
+
+.Forecast{
+    position: relative;
+    right: -547px;
+}
+
+table.dataframe{
+    background-color: #f0f0f0;
+    color: #000;
+    border: 0 !important;
+    padding: 10px;
+}
+
+table.dataframe > thead,th,tbody,tr,td{
+    border: 0 !important;
+}
