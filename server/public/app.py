@@ -19,6 +19,7 @@ from analyze1 import generatePlot
 from predict import forecast
 from scrape import scrape
 from multistock import multiStock
+from flask import Markup
 
 app=Flask(__name__)
 
@@ -61,8 +62,10 @@ def submit():
         quarter = data['quarter']
 
         trend = results['trend']
+        value=Markup(results['html'])
+
         img = './static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter)   
+        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value)   
     else:
         return render_template("submit.html")
 

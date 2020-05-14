@@ -38,7 +38,7 @@ def multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date):
     retscomp = comp_stocks_df.pct_change()
     corr = retscomp.corr()
 
-    from matplotlib import cm
+
     plt.scatter(retscomp[ticker1], retscomp[ticker2],alpha=0.3)
     plt.xlabel(f'Returns {ticker1}')
     plt.ylabel(f'Returns {ticker2}')
